@@ -1,6 +1,6 @@
 package com.yukihirai0505
 
-object Main extends App {
+object PrimeNumCombination {
 
   import scala.io.Source.stdin
 
