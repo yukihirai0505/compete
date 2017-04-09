@@ -24,7 +24,7 @@ object Main extends App {
               checkOneLineTagPattern(s.replace(x, "").replace(y, ""))
           case _ =>
         }
-        case _ =>
+        case _ => checkMultiLineTagPattern(input)
       }
     }
     def checkMultiLineTagPattern(s: String) = {
@@ -42,7 +42,6 @@ object Main extends App {
       }
     }
     checkOneLineTagPattern(input)
-    checkMultiLineTagPattern(input)
   }
   println(firstErrorLineNum)
 }
