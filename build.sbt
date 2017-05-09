@@ -1,4 +1,4 @@
-name := """scala-simulation"""
+name := """scala-competitive-programming"""
 
 version := "1.0"
 
