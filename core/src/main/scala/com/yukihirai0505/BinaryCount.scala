@@ -10,13 +10,10 @@ package com.yukihirai0505
   * 16進数: toHexString
   *
   */
-object BinaryCount {
-  import scala.io.Source.stdin
-  var resultNum = 0
-  for (line <- stdin.getLines) {
-    val nums = line.split(" ").map(_.toInt)
-    val orgNum = nums(0)
-    val oneCounts = nums(1)
-    println((0 to orgNum).count(n => n.toBinaryString.split("").count(x => x.equals("1")) == oneCounts))
-  }
+object BinaryCount extends App {
+  val sc = new java.util.Scanner(System.in)
+  val nums = sc.nextLine().split(" ").map(_.toInt)
+  val orgNum = nums(0)
+  val oneCounts = nums(1)
+  println((0 to orgNum).count(n => n.toBinaryString.split("").count(x => x.equals("1")) == oneCounts))
 }
