@@ -1,6 +1,6 @@
 package com.yukihirai0505
 
-/** *
+/***
   * 通分と約分の実装
   */
 object Reduction extends App {
@@ -30,8 +30,6 @@ object Reduction extends App {
   val greatestCommonFactor2 = euclideanAlgorithm(leastCommonMultiple, totalMolecule)
   val resultMolecule = totalMolecule / greatestCommonFactor2
   val resultDenominator = leastCommonMultiple / greatestCommonFactor2
-  if (resultMolecule == resultDenominator)
-    println(resultMolecule)
-  else
-    println(s"$resultMolecule/$resultDenominator")
+  if (resultMolecule == resultDenominator) println(resultMolecule)
+  else println(s"$resultMolecule/$resultDenominator")
 }
