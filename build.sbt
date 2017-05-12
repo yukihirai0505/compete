@@ -2,11 +2,11 @@ name := """scala-competitive-programming"""
 
 version := "1.0"
 
-scalaVersion := "2.11.8"
+scalaVersion in ThisBuild := "2.11.8"
+run <<= run in Compile in core
 
-// Change this to another test framework if you prefer
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+lazy val macros = (project in file("macros")).settings(
+  libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
+)
 
-// Uncomment to use Akka
-//libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.11"
-
+lazy val core = (project in file("core")) dependsOn macros
