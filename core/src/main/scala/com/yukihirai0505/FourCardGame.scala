@@ -4,10 +4,9 @@ package com.yukihirai0505
   * Four Card Game
   * Judge most strong card
   */
-object FourCardGame {
-  import scala.io.Source.stdin
-  for (line <- stdin.getLines) {
-    val nums = line.split("").map(_.toInt).sortBy(x => x)
-    println(if (nums.head.equals(0)) nums(1) else nums.last)
+object FourCardGame extends App {
+  val sc = new java.util.Scanner(System.in)
+  Option(sc.next().split("").map(_.toInt).sorted).foreach { v =>
+    println(if (v.headOption.exists(x => x.equals(0))) v(0) else v.lastOption.getOrElse("nothing"))
   }
 }
