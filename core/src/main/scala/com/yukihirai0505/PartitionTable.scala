@@ -4,11 +4,10 @@ package com.yukihirai0505
   * １つのテーブルに配置できる最大の人数がm
   * n人が1つ以上のテーブルに別れて座る人数のパターン
   * 1人だけのテーブルを作ることがないように分ける
+  * 入力例: 3 9
   */
-object PartitionTable {
-
+object PartitionTable extends App {
   import scala.io.Source.stdin
-  var count = 0
   for (line <- stdin.getLines) {
     val nums = line.split(" ").map(_.toInt)
     val tableLimitNum = nums(0)
