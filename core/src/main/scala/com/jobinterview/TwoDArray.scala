@@ -1,15 +1,10 @@
 package com.jobinterview
 
 import java.io._
-import java.math._
-import java.security._
-import java.text._
-import java.util._
-import java.util.concurrent._
-import java.util.function._
-import java.util.regex._
-import java.util.stream._
 
+/**
+  * https://www.hackerrank.com/challenges/2d-array/problem?h_l=interview&playlist_slugs%5B%5D%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D%5B%5D=arrays
+  */
 object TwoDArray {
 
   def hourglassSum(arr: Array[Array[Int]]): Int = {
@@ -26,7 +21,7 @@ object TwoDArray {
   def main(args: Array[String]) {
     val stdin = scala.io.StdIn
 
-    val printWriter = new PrintWriter("hoge")
+    val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
     val arr = Array.ofDim[Int](6, 6)
 

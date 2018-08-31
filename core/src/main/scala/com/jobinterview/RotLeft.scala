@@ -1,27 +1,20 @@
-import java.io._
-import java.math._
-import java.security._
-import java.text._
-import java.util._
-import java.util.concurrent._
-import java.util.function._
-import java.util.regex._
-import java.util.stream._
+package com.jobinterview
 
+import java.io._
+
+/**
+  * https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem?h_l=interview&playlist_slugs%5B%5D%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D%5B%5D=arrays
+  */
 object RotLeft {
 
-  // Complete the rotLeft function below.
   def rotLeft(a: Array[Int], d: Int): Array[Int] = {
-    if (d == 0) a
-    else {
-      rotLeft(a.drop(1) :+ a.head, d - 1)
-    }
+    a.slice(d, a.length) ++ a.slice(0, d)
   }
 
   def main(args: Array[String]) {
     val stdin = scala.io.StdIn
 
-    val printWriter = new PrintWriter("hoge")
+    val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
     val nd = stdin.readLine.split(" ")
 
