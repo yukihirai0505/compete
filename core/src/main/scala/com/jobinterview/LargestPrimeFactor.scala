@@ -1,14 +1,22 @@
 package com.jobinterview
 
 object LargestPrimeFactor {
-  def solution(n: Long): Unit = {
-    def find(dividend: Long, largest: Long): Long = {
-      if (dividend == largest) largest else
-      if (largest % dividend == 0) find(dividend, largest / dividend)
-      else find(dividend + 1, largest)
+
+  def isPrime(value: Long): Boolean = {
+    !(2L to math.sqrt(value).toInt).exists(value % _ == 0)
+  }
+
+  def solution(n: Long): Long = {
+    val maxFactor = Math.sqrt(n)
+
+    def find(x: Long, dividend: Long): Long = {
+      val prime = isPrime(dividend)
+      if (x % dividend == 0 && prime && x == dividend) dividend
+      else if (x % dividend == 0 && prime) find(x / dividend, dividend)
+      else find(x, dividend + 1)
     }
 
-    println(find(2, n))
+    find(n, 2)
   }
 
   def main(args: Array[String]) {
@@ -17,7 +25,7 @@ object LargestPrimeFactor {
     var a0 = 0
     while (a0 < t) {
       var n = sc.nextLong()
-      solution(n)
+      println(solution(n))
       a0 += 1
     }
   }
