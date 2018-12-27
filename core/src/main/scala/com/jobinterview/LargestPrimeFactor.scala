@@ -7,13 +7,17 @@ object LargestPrimeFactor {
   }
 
   def solution(n: Long): Long = {
+    if (isPrime(n)) return n
+
     val maxFactor = Math.sqrt(n)
 
     def find(x: Long, dividend: Long): Long = {
-      val prime = isPrime(dividend)
-      if (x % dividend == 0 && prime && x == dividend) dividend
-      else if (x % dividend == 0 && prime) find(x / dividend, dividend)
-      else find(x, dividend + 1)
+      if (x % dividend == 0 && isPrime(dividend)) {
+        dividend match {
+          case d if d > maxFactor || x == d => d
+          case d => find(x / d, d)
+        }
+      } else find(x, dividend + 1)
     }
 
     find(n, 2)
