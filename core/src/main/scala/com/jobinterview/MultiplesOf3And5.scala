@@ -11,12 +11,7 @@ object MultiplesOf3And5 {
 
   def main(args: Array[String]) {
     val sc = new java.util.Scanner(System.in)
-    var t = sc.nextInt()
-    var a0 = 0
-    while (a0 < t) {
-      var n = sc.nextLong()
-      solution(n - 1)
-      a0 += 1
-    }
+    val times = sc.nextInt()
+    (0 until times).foreach(_ => println(solution(sc.nextLong() - 1)))
   }
 }
