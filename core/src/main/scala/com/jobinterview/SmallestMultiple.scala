@@ -13,14 +13,14 @@ object SmallestMultiple {
     else a
   }
 
-  def latestCommonMultiple(a: Int, b: Int): Int = {
+  def leastCommonMultiple(a: Int, b: Int): Int = {
     a * b / greatestCommonDivisor(a, b)
   }
 
   def solution(n: Int): Int = {
     def find(x: Int = 2, commonMultiple: Int = 1): Int = {
       if (x > n) commonMultiple
-      else find(x + 1, latestCommonMultiple(x, commonMultiple))
+      else find(x + 1, leastCommonMultiple(x, commonMultiple))
     }
 
     find()
