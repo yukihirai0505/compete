@@ -3,7 +3,7 @@ package com.jobinterview
 object SumSquareDifference {
 
   def solution(n: Int): Long = {
-    (math.pow((1 to n).sum, 2) - (1 to n).map(math.pow(_, 2)).sum).toLong
+    (math.pow(n * (n + 1) / 2, 2) - (n * (n + 1) * (2 * n + 1) / 6)).toLong
   }
 
   def main(args: Array[String]) {
