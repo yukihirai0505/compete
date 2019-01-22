@@ -1,4 +1,4 @@
-import com.yukihirai0505.leetcode.ClimbStairs
+import com.yukihirai0505.leetcode.dynamic.ClimbStairs
 import org.scalatest.{FlatSpec, Matchers}
 
 class ClimbStairsSpec extends FlatSpec with Matchers {

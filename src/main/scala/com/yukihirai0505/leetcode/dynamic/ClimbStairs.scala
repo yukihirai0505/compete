@@ -1,4 +1,4 @@
-package com.yukihirai0505.leetcode
+package com.yukihirai0505.leetcode.dynamic
 
 object ClimbStairs {
   def climbStairs(n: Int): Int = {
