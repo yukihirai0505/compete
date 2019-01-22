@@ -16,8 +16,4 @@ object TwoSum {
 
     find()
   }
-
-  def main(args: Array[String]): Unit = {
-    twoSum(Array(2, 7, 11, 15), 9).foreach(println)
-  }
 }
