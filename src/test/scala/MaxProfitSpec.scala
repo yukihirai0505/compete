@@ -1,4 +1,4 @@
-import com.yukihirai0505.leetcode.dynamic.{ClimbStairs, MaxProfit}
+import com.yukihirai0505.leetcode.dynamic.MaxProfit
 import org.scalatest.{FlatSpec, Matchers}
 
 class MaxProfitSpec extends FlatSpec with Matchers {
