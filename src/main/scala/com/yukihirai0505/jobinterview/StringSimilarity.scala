@@ -4,23 +4,26 @@ object StringSimilarity {
 
   def stringSimilarity(inputs: Array[String]): Array[Int] = {
     inputs.map(input => {
-      def count(str: String, counts: Int = 0): Int = {
-        if (str.isEmpty) counts
+      @scala.annotation.tailrec
+      def count(i: Int, counts: Int = 0): Int = {
+        val suffix = input.slice(i, input.length)
+        if (suffix.isEmpty) counts
         else {
-          def check(i: Int = 0, total: Int = 0): Int = {
-            if (i == str.length) total
+          @scala.annotation.tailrec
+          def check(j: Int = 0, total: Int = 0): Int = {
+            if (j == suffix.length) total
             else {
-              if (str(i).equals(input(i))) {
-                check(i + 1, total + 1)
+              if (suffix(j).equals(input(j))) {
+                check(j + 1, total + 1)
               } else total
             }
           }
 
-          count(str.tail, counts + check())
+          count(i + 1, counts + check())
         }
       }
 
-      count(input.tail, input.length)
+      count(1, input.length)
     })
   }
 
