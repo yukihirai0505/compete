@@ -8,9 +8,12 @@ object VerifyItems {
       else {
         val item = items(i)
         val price: Float = origprices(origitems.indexOf(item))
-        prices.find(_.equals(price)) match {
-          case Some(_) => count(i + 1, total)
-          case _ => count(i + 1, total + 1)
+        val priceIndex = prices.indexOf(price)
+        if (priceIndex == -1) {
+          count(i + 1, total + 1)
+        } else {
+          prices(priceIndex) = -1
+          count(i + 1, total)
         }
       }
     }
@@ -22,8 +25,8 @@ object VerifyItems {
     println(verifyItems(
       Array("rice", "sugar", "wheat", "cheese"),
       Array(16.89, 56.92, 20.89, 345.99).map(_.toFloat),
-      Array("rice", "cheese"),
-      Array(16.89, 400.89).map(_.toFloat))
+      Array("rice", "cheese", "rice"),
+      Array(16.89, 400.89, 400.89).map(_.toFloat))
     )
   }
 }
