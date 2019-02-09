@@ -3,12 +3,8 @@ package com.yukihirai0505.hackerrank
 object SaveThePrisoner {
 
   def saveThePrisoner(n: Int, m: Int, s: Int): Int = {
-    def dev(acc: Int): Int = {
-      if (n >= acc) acc
-      else dev(acc - n)
-    }
-
-    dev((m - 1) + s)
+    val r = (m % n + s - 1) % n
+    if (r == 0) n else r
   }
 
   def main(args: Array[String]): Unit = {
